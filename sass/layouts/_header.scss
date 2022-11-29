@@ -1,0 +1,134 @@
+.header {
+  border-bottom: 1px solid var(--top-line-color);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__logo {
+  @media screen and (min-width: 768px) {
+    margin-right: 87px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
+  }
+}
+
+.navigation__menu {
+  display: flex;
+  gap: 50px;
+}
+
+.menu__item {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.menu__link {
+  display: block;
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--title-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+  &.current {
+    color: var(--accent-color);
+  }
+  &.current::after {
+    content: "";
+
+    position: absolute;
+    bottom: -1px;
+
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+  }
+}
+
+.navigation__contacts {
+  display: flex;
+  gap: 50px;
+}
+
+.contacts__item {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.contacts__mail,
+.contacts__tel {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.mail,
+.tel {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+  .header-general & {
+    display: flex;
+    align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: var(--primary-text-color);
+  }
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+    fill: var(--accent-color);
+  }
+}
+
+.mail__icon {
+  margin-right: 10px;
+}
+
+.tel__icon {
+  margin-right: 10px;
+}
+
+.menu-open {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
